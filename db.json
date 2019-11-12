@@ -1,0 +1,22 @@
+{
+  "ids": {
+    "Customer": 4,
+    "Vehicle": 9
+  },
+  "models": {
+    "Customer": {
+      "1": "{\"name\":\"Kalles Grustransporter AB \",\"address\":\"ementvägen 8, 111 11 Södertälje\",\"id\":1}",
+      "2": "{\"name\":\"Johans Bulk AB \",\"address\":\"Balkvägen 12, 222 22 Stockholm\",\"id\":2}",
+      "3": "{\"name\":\"Haralds Värdetransporter AB \",\"address\":\"Budgetvägen 1, 333 33 Uppsala\",\"id\":3}"
+    },
+    "Vehicle": {
+      "2": "{\"vin\":\"YS2R4X20005399401\",\"regnumber\":\"ABC123\",\"isConnected\":true,\"customerId\":1,\"id\":2}",
+      "3": "{\"vin\":\"VLUR4X20009093588\",\"regnumber\":\"DEF456\",\"isConnected\":true,\"customerId\":1,\"id\":3}",
+      "4": "{\"vin\":\"VLUR4X20009048066\",\"regnumber\":\"GHI789\",\"isConnected\":true,\"customerId\":1,\"id\":4}",
+      "5": "{\"vin\":\"YS2R4X20005388011\",\"regnumber\":\"JKL012\",\"isConnected\":false,\"customerId\":2,\"id\":5}",
+      "6": "{\"vin\":\"YS2R4X20005387949\",\"regnumber\":\"MNO345\",\"isConnected\":true,\"customerId\":2,\"id\":6}",
+      "7": "{\"vin\":\"VLUR4X20009048066\",\"regnumber\":\"PQR678\",\"isConnected\":true,\"customerId\":3,\"id\":7}",
+      "8": "{\"vin\":\"YS2R4X20005387055\",\"regnumber\":\"STU901\",\"isConnected\":true,\"customerId\":3,\"id\":8}"
+    }
+  }
+}
