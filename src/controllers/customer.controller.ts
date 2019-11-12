@@ -17,20 +17,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Customer} from '../models';
-import {CustomerRepository} from '../repositories';
+import { Customer } from '../models';
+import { CustomerRepository } from '../repositories';
 
 export class CustomerController {
   constructor(
     @repository(CustomerRepository)
-    public customerRepository : CustomerRepository,
-  ) {}
+    public customerRepository: CustomerRepository,
+  ) { }
 
   @post('/customers', {
     responses: {
       '200': {
         description: 'Customer model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Customer)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Customer) } },
       },
     },
   })
@@ -54,7 +54,7 @@ export class CustomerController {
     responses: {
       '200': {
         description: 'Customer model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -70,7 +70,7 @@ export class CustomerController {
         description: 'Array of Customer model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Customer)},
+            schema: { type: 'array', items: getModelSchemaRef(Customer) },
           },
         },
       },
@@ -79,14 +79,15 @@ export class CustomerController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(Customer)) filter?: Filter<Customer>,
   ): Promise<Customer[]> {
-    return this.customerRepository.find(filter);
+    // return customers including vehicles 
+    return this.customerRepository.find({ include: [{ relation: "vehicles" }] });
   }
 
   @patch('/customers', {
     responses: {
       '200': {
         description: 'Customer PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -94,7 +95,7 @@ export class CustomerController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Customer, {partial: true}),
+          schema: getModelSchemaRef(Customer, { partial: true }),
         },
       },
     })
@@ -108,7 +109,7 @@ export class CustomerController {
     responses: {
       '200': {
         description: 'Customer model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Customer)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Customer) } },
       },
     },
   })
@@ -128,7 +129,7 @@ export class CustomerController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Customer, {partial: true}),
+          schema: getModelSchemaRef(Customer, { partial: true }),
         },
       },
     })

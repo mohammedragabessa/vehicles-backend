@@ -79,7 +79,8 @@ export class VehicleController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(Vehicle)) filter?: Filter<Vehicle>,
   ): Promise<Vehicle[]> {
-    return this.vehicleRepository.find(filter);
+    // return vehicles including customer information  
+    return this.vehicleRepository.find({ include: [{ relation: "customer" }] });
   }
 
   @patch('/vehicles', {
