@@ -13,9 +13,9 @@ before_install:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - eval $(aws ecr get-login --no-include-email --region us-east-2)
-  - docker build -t org/web .
-  - docker run -p 127.0.0.1:80:4567 -d org/web:latest
-  - docker tag org/web:latest 307045200927.dkr.ecr.us-east-2.amazonaws.com/org/web:latest
+  - docker build -t vehicles/backend .
+  - docker run -p 127.0.0.1:80:4567 -d vehicles/backend:latest
+  - docker tag vehicles/backend:latest 307045200927.dkr.ecr.us-east-2.amazonaws.com/vehicles/backend:latest
   # - docker build -t loopback .
   # - docker run -p 127.0.0.1:80:4567 -d loopback:latest
   # - docker ps -a
@@ -33,7 +33,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push 307045200927.dkr.ecr.us-east-2.amazonaws.com/org/web:latest
+  script: docker push 307045200927.dkr.ecr.us-east-2.amazonaws.com/vehicles/backend:latest
   # docker push mohamedragabessa/loopbacktravis:latest
   on:
     branch: master
