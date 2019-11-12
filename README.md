@@ -12,6 +12,7 @@ npm install
 ```
 2. Launch development server, and open `localhost:3000` in your browser:
 
+
 ```sh
 npm start
 ```
