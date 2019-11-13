@@ -11,7 +11,7 @@
     },
     "Vehicle": {
       "2": "{\"vin\":\"YS2R4X20005399401\",\"regnumber\":\"ABC123\",\"isConnected\":true,\"customerId\":1,\"id\":2}",
-      "3": "{\"vin\":\"VLUR4X20009093588\",\"regnumber\":\"DEF456\",\"isConnected\":true,\"customerId\":1,\"id\":3}",
+      "3": "{\"vin\":\"VLUR4X20009093588\",\"regnumber\":\"DEF456\",\"isConnected\":false,\"customerId\":1,\"id\":3}",
       "4": "{\"vin\":\"VLUR4X20009048066\",\"regnumber\":\"GHI789\",\"isConnected\":true,\"customerId\":1,\"id\":4}",
       "5": "{\"vin\":\"YS2R4X20005388011\",\"regnumber\":\"JKL012\",\"isConnected\":false,\"customerId\":2,\"id\":5}",
       "6": "{\"vin\":\"YS2R4X20005387949\",\"regnumber\":\"MNO345\",\"isConnected\":true,\"customerId\":2,\"id\":6}",
