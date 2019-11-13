@@ -26,7 +26,3 @@ ENV HOST=0.0.0.0 PORT=8080
 
 EXPOSE ${PORT}
 CMD [ "node", "." ]
-
-#stage 2
-FROM nginx:alpine
-COPY --from=node /app/dist /usr/share/nginx/html
