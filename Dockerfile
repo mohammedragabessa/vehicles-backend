@@ -1,5 +1,5 @@
 # Check out https://hub.docker.com/_/node to select a new base image
-FROM node:10-slim
+FROM node:10-slim as node 
 
 # Set to a non-root built-in user `node`
 USER node
@@ -26,3 +26,7 @@ ENV HOST=0.0.0.0 PORT=8080
 
 EXPOSE ${PORT}
 CMD [ "node", "." ]
+
+#stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist /usr/share/nginx/html
