@@ -4,6 +4,7 @@ import {
   Filter,
   repository,
   Where,
+  AnyType,
 } from '@loopback/repository';
 import {
   post,
@@ -19,6 +20,8 @@ import {
 } from '@loopback/rest';
 import { Vehicle } from '../models';
 import { VehicleRepository } from '../repositories';
+
+var rp = require('request-promise');
 
 export class VehicleController {
   constructor(
@@ -80,7 +83,19 @@ export class VehicleController {
     @param.query.object('filter', getFilterSchemaFor(Vehicle)) filter?: Filter<Vehicle>,
   ): Promise<Vehicle[]> {
     // return vehicles including customer information  
-    return this.vehicleRepository.find({ include: [{ relation: "customer" }] });
+    let vehicles = await this.vehicleRepository.find({ include: [{ relation: "customer" }] });
+
+    let rStatus = [];
+    rStatus = await rp({
+      uri: 'http://random-status.us-east-2.elasticbeanstalk.com/RandomStatusArray/' + vehicles.length,
+      json: true
+    });
+
+    for (let i = 0; i < vehicles.length; i++) {
+      vehicles[i].isConnected = rStatus[i]
+    }
+
+    return vehicles;
   }
 
   @patch('/vehicles', {

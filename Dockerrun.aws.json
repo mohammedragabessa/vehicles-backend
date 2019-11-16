@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "mohamedragabessa/vehicle-backend:latest",
+        "Name": "mohamedragabessa/random-status:latest",
         "Update": "true"
     },
     "Ports": [
