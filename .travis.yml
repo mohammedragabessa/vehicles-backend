@@ -40,7 +40,7 @@ deploy:
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "us-east-2"  
-  app: " vehicle-backend-container"
+  app: "vehicle-backend-container"
   env: "VehicleBackendContainer-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   on:
