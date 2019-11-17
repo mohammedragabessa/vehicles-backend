@@ -29,30 +29,29 @@ export class VehicleController {
     public vehicleRepository: VehicleRepository,
   ) { }
 
-  // @post('/vehicles', {
-  //ful access 
-  //   responses: {
-  //     '200': {
-  //       description: 'Vehicle model instance',
-  //       content: { 'application/json': { schema: getModelSchemaRef(Vehicle) } },
-  //     },
-  //   },
-  // })
-  // async create(
-  //   @requestBody({
-  //     content: {
-  //       'application/json': {
-  //         schema: getModelSchemaRef(Vehicle, {
-  //           title: 'NewVehicle',
-  //           exclude: ['id'],
-  //         }),
-  //       },
-  //     },
-  //   })
-  //   vehicle: Omit<Vehicle, 'id'>,
-  // ): Promise<Vehicle> {
-  //   return this.vehicleRepository.create(vehicle);
-  // }
+  @post('/vehicles', {
+    responses: {
+      '200': {
+        description: 'Vehicle model instance',
+        content: { 'application/json': { schema: getModelSchemaRef(Vehicle) } },
+      },
+    },
+  })
+  async create(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(Vehicle, {
+            title: 'NewVehicle',
+            exclude: ['id'],
+          }),
+        },
+      },
+    })
+    vehicle: Omit<Vehicle, 'id'>,
+  ): Promise<Vehicle> {
+    return this.vehicleRepository.create(vehicle);
+  }
 
   @get('/vehicles/count', {
     responses: {
