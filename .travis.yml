@@ -32,11 +32,13 @@ branches:
 before_deploy: 
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
   - docker push mohamedragabessa/vehicle-backend:latest
+
 deploy:
   provider: elasticbeanstalk
-  access_key_id: $ACCESSKEYID
+  access_key_id:
+    secure: $ACCESSKEYID
   secret_access_key:
-  secure: "$SECRETACCESSKEY"
+    secure: "$SECRETACCESSKEY"
   region: "us-east-2"  
   app: " vehicle-backend-container"
   env: "VehicleBackendContainer-env"
