@@ -34,14 +34,16 @@ before_deploy:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: "$ACCESSKEYID"
+  access_key_id:
+    secure: "$ACCESSKEYID"
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "us-east-2"
-  app: "backend-automated"
-  env: "BackendAutomated-env"
+  app: "vehicle-backend-container"
+  env: "VehicleBackendContainer-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
+  path: "vehicle-backend-container"
   on:
     branch: master
   #   deploy:
