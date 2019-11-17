@@ -25,4 +25,7 @@ RUN npm run build
 ENV HOST=0.0.0.0 PORT=8080
 
 EXPOSE ${PORT}
+
+EXPOSE 8081
+
 CMD [ "node", "." ]
