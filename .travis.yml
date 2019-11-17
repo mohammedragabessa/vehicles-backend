@@ -41,6 +41,8 @@ deploy:
     secure: "$SECRETACCESSKEY"
   region: "$REGION"
   app: "vehicle-backend-container"
+  env: "$ELASTIC_BEANSTALK_ENV"
+  bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   on:
     branch: master
   #   deploy:
