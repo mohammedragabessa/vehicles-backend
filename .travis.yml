@@ -41,8 +41,10 @@ deploy:
     secure: "$SECRETACCESSKEY"
   region: "us-east-2"  
   app: "vehicle-backend-container"
-  env: "VehicleBackendContainer-env"
+  env: "Docker"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   label : "latest-2"
+  skip_cleanup: true
+  path: "vehicle-backend-container"
   on:
     branch: master
