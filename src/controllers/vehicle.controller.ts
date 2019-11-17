@@ -30,6 +30,7 @@ export class VehicleController {
   ) { }
 
   // @post('/vehicles', {
+  //ful access 
   //   responses: {
   //     '200': {
   //       description: 'Vehicle model instance',
