@@ -43,6 +43,6 @@ deploy:
   app: "vehicle-backend-container"
   env: "VehicleBackendContainer-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
-  label : "latest-1"
+  label : "latest-2"
   on:
     branch: master
