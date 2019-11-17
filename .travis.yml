@@ -39,11 +39,10 @@ deploy:
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "us-east-2"
-  app: "vehicle-backend-container"
-  env: "VehicleBackendContainer-env"
+  app: "sample-app"
+  env: "SampleApp-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
-  path: "vehicle-backend-container"
   on:
     branch: master
   #   deploy:
