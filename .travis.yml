@@ -40,8 +40,8 @@ deploy:
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "$REGION"
-  app: "continuous-delivery"
-  env: "ContinuousDelivery-env"
+  app: "vehicle-backend-container"
+  env: "VehicleBackendContainer-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
   on:
