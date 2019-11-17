@@ -64,6 +64,7 @@ export class VehicleController {
   async count(
     @param.query.object('where', getWhereSchemaFor(Vehicle)) where?: Where<Vehicle>,
   ): Promise<Count> {
+    //comment 
     return this.vehicleRepository.count(where);
   }
 
