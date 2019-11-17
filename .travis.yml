@@ -29,16 +29,17 @@ branches:
   only:
     - master
 
-before_deploy: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+before_deploy: 
+  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+  - docker push mohamedragabessa/vehicle-backend:latest
 deploy:
-  provider: script
-  script: docker push mohamedragabessa/vehicle-backend:latest
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+  secure: "$SECRETACCESSKEY"
+  region: "us-east-2"  
+  app: " vehicle-backend-container"
+  env: "VehicleBackendContainer-env"
+  bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   on:
     branch: master
-# deploy:
-#   provider: script
-#   script: docker push 307045200927.dkr.ecr.us-east-2.amazonaws.com/vehicles/backend:latest
-#   # docker push mohamedragabessa/loopbacktravis:latest
-#   on:
-#     branch: master
-#     # loopback:latest
