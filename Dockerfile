@@ -26,6 +26,6 @@ ENV HOST=0.0.0.0 PORT=8080
 
 # EXPOSE ${PORT}
 
-EXPOSE 8081
+EXPOSE 8080
 
 CMD [ "node", "." ]
