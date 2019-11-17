@@ -29,25 +29,21 @@ branches:
   only:
     - master
 
-before_deploy: 
+before_deploy:
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id:
-    secure: "$ACCESSKEYID"
+  access_key_id: "$ACCESSKEYID"
   secret_access_key:
     secure: "$SECRETACCESSKEY"
-  region: "us-east-2"  
-  app: "vehicle-backend-container"
-  env: "VehicleBackendContainer-env"
+  region: "us-east-2"
+  app: "backend-automated"
+  env: "BackendAutomated-env"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
-  path: "vehicle-backend-container"
   on:
     branch: master
-
-
   #   deploy:
   # provider: script
   # script: docker push mohamedragabessa/vehicle-backend:latest
