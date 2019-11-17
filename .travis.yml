@@ -41,7 +41,7 @@ deploy:
     secure: "$SECRETACCESSKEY"
   region: "$REGION"
   app: "vehicle-backend-container"
-  env: "VehicleBackendContainer-env"
+  env: "VehicleBackendContainer-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
   on:
