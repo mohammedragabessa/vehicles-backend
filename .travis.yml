@@ -42,6 +42,7 @@ deploy:
   region: "$REGION"
   app: "vehicles-backend"
   env: "vehicles-backend-dev"
+  bucket_path: 'vehicles-backend'
   bucket_name: "elasticbeanstalk-us-east-2-307045200927"
   skip_cleanup: true
   on:
@@ -60,8 +61,8 @@ deploy:
 # skip_cleanup: true
 # on:
 #   branch: master
-deploy:
-  provider: script
-  script: docker push mohamedragabessa/vehicle-backend:latest
-  on:
-    branch: master
+# deploy:
+#   provider: script
+#   script: docker push mohamedragabessa/vehicle-backend:latest
+#   on:
+#     branch: master
