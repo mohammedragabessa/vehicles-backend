@@ -48,6 +48,8 @@ deploy:
   on:
     branch: master
     
+after_deploy:
+  - echo "Applcation Deployed!"
 #   deploy:
 # provider: elasticbeanstalk
 # access_key_id:
